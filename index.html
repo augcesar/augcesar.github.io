@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Engenheiro de Software</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function revelarEmail() {
+            // E-mail criptografado em Base64
+            const emailCriptografado = "YXVndXN0b0BhdWdjZXNhci5jb20uYnI="; // seu-email@example.com
+            const emailDecodificado = atob(emailCriptografado); // Decodifica o Base64
+
+            // Exibe o e-mail no elemento HTML
+            const emailElemento = document.getElementById("email-oculto");
+            emailElemento.textContent = emailDecodificado;
+
+            // Opcional: desativa o botão após revelar
+            const botao = document.getElementById("botao-revelar");
+            botao.disabled = true;
+            botao.textContent = "E-mail Revelado";
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-purple-700 text-white py-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">Bem-vindo ao meu Perfil!</h1>
+        </div>
+    </header>
+    <main class="container mx-auto my-10 p-6 bg-white shadow-md rounded-lg">
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-purple-700 mb-4">Sobre Mim</h2>
+            <p class="text-gray-700">Olá! Sou um engenheiro de software especializado em Ruby on Rails, com experiência em criar aplicações web escaláveis e de alto desempenho. Atualmente, trabalho como Tech Lead, liderando equipes para entregar soluções robustas.</p>
+        </section>
+        
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-purple-700 mb-4">Habilidades</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li>Ruby on Rails</li>
+                <li>Arquitetura de Microserviços</li>
+                <li>DevOps (AWS, Docker, Kubernetes)</li>
+                <li>Amazon AWS</li>
+            </ul>
+        </section>
+        
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-purple-700 mb-4">Contato</h2>
+            <p class="text-gray-700">Você pode me encontrar no <a href="https://www.linkedin.com/in/augcesar/" target="_blank" class="text-purple-700 underline">LinkedIn</a> ou enviar um e-mail para <b id="email-oculto" class="text-gray-700">[Clique no botão para revelar o e-mail]</b></p>
+            
+            <button id="botao-revelar" onclick="revelarEmail()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                Mostrar E-mail
+            </button>
+        </section>
+    </main>
+</body>
+</html>
